@@ -4,11 +4,16 @@
         <head>
             <title>Stock market forecast</title>
             <meta charset="utf-8">
+            <link rel="stylesheet" href="./Style/style.css">
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="./Scripts/radioChange.js"></script>
         </head>
 
         <body>
+
             <!-- Div for model -->
-            <div>
+            <div class="container">
                 
                 <h2>Stock Price Prediction</h2>
                 <!-- Options for stock price prediction -->
@@ -29,7 +34,7 @@
 
                 </div>
                 <!-- Options for algorithm -->
-                <div>
+                <div class="containerAlgorithm">
                     <div>
                         <form action="">
                             <div class="algorithm">
@@ -41,13 +46,13 @@
                                 <label for="SVR">SVR</label>
                             </div>
                             <div class="algorithm">
-                                <input type="radio" value="Decission Tree" name="algorithm">
-                                <label for="Decision Tree">Decision Tree</label>
+                                <input type="radio" value="DecisionTreeRegressor" name="algorithm">
+                                <label for="DecisionTreeRegressor">Decision Tree</label>
                             </div>
                         </form>
                     </div>
                     <!-- Possible values for Random Forest -->
-                    <div id="RandomForestBlock">
+                    <div id="RandomForestBlock" class="algorithmSettings">
                         <form action="">
                             <!-- Number of estimators in the forest -->
                             <div>
@@ -111,11 +116,35 @@
                     </div>
                         
                     <!-- Possible values for SVR -->
-                    <div id="SVRBlock">
+                    <div id="SVRBlock" class="algorithmSettings">
                         <form action="">
 
                             <div>
-                                
+                                <label for="kernel">Specifies the kernel type to be used in the algorithm</label>
+                                <select name="kernel" id="kernel">
+                                    <option value="linear">Linear</option>
+                                    <option value="poly">Poly</option>
+                                    <option value="rbf" selected="selected">Rbf</option>
+                                    <option value="sigmoid">Sigmoid</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="degree">Degree of the polynomial kernel function only works for poly</label>
+                                <select name="degree" id="degree">
+                                    <option value="3" selected="selected">3</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="gamma">Kernel coefficient for rbf, poly and sigmoid</label>
+                                <select name="gamma" id="gamma">
+                                    <option value="scale" selected="selected">Scale</option>
+                                    <option value="auto">Auto</option>
+                                </select>
                             </div>
                             
                         </form>
@@ -123,6 +152,15 @@
                     </div>
 
                     <!-- Possible values for Decision Tree -->
+                    <div id="DecissionTreeBlock" class="algorithmSettings">
+                        <form action="">
+
+                            <div>
+                                <label for=""></label>
+                            </div>
+
+                        </form>
+                    </div>
 
                 </div>
 
