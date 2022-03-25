@@ -4,6 +4,5 @@ from GUI.gui import Gui
 if __name__ == "__main__":
     app = Gui()
     app.run()
-    while app.app_running:
-        app.update()
+    app.root.mainloop()
 

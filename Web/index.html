@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html lang="es">
+        <head>
+            <title>Stock market forecast</title>
+            <meta charset="utf-8">
+        </head>
+
+        <body>
+            <!-- Div for model -->
+            <div>
+                
+                <h2>Stock Price Prediction</h2>
+                <!-- Options for stock price prediction -->
+                <div>
+                    <form action="">
+
+                        <label for="stock">Choose a Stock</label>
+                        <select name="stock" id="stocks">
+
+                            <option value="TSLA">TSLA</option>
+                            <option value="SPY">SPY</option>
+                            <option value="PLTR">PLTR</option>
+                            <option value="NIO">NIO</option>
+
+                        </select>
+                        <input type="submit" value="Submit">
+                    </form>
+
+                </div>
+                <!-- Options for algorithm -->
+                <div>
+                    <div>
+                        <form action="">
+                            <div class="algorithm">
+                                <input type="radio" value="RandomForestRegressor" name="algorithm" checked>
+                                <label for="RandomForestRegressor">Random Forest</label>
+                            </div>
+                            <div class="algorithm">
+                                <input type="radio" value="SVR" name="algorithm">
+                                <label for="SVR">SVR</label>
+                            </div>
+                            <div class="algorithm">
+                                <input type="radio" value="Decission Tree" name="algorithm">
+                                <label for="Decision Tree">Decision Tree</label>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Possible values for Random Forest -->
+                    <div id="RandomForestBlock">
+                        <form action="">
+                            <!-- Number of estimators in the forest -->
+                            <div>
+                                <label for="n_estimators">The number of trees in the forest</label>
+                                <select name="n_estimators" id="n_estimators">
+                                    <option value="50">50</option>
+                                    <option value="100" selected="selected">100</option>
+                                    <option value="200">200</option>
+                                    <option value="500">500</option>
+                                </select>
+                            </div>
+
+                            <!-- Criterion -->
+                            <div>
+                                <label for="criterion">The function to measure the quality of a split</label>
+                                <select name="criterion" id="criterion">
+                                    <option value="squared_error">Squared Error</option>
+                                    <option value="absolute_error">Absolute Error</option>
+                                    <option value="poisson">Poisson</option>
+                                </select>
+                            </div>
+
+                            <!-- Max depth -->
+
+                            <div>
+                                <label for="max_depth">The maximum depth of the tree</label>
+                                <select name="max_depth" id="max_depth">
+                                    <option value="None">None</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                </select>
+                            </div>
+
+                            <!-- Min Sample Split -->
+                            <div>
+                                <label for="min_samples_split">The minimum number of samples required to split an internal node</label>
+                                <select name="min_samples_split" id="min_samples_split">
+                                    <option value="2" selected="selected">2</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+                                </select>
+                            </div>
+
+                            <!-- Min Sample Leaf -->
+                            <div>
+                                <label for="min_samples_leaf">The minimum number of samples required to be at a leaf node</label>
+                                <select name="min_samples_leaf" id="min_samples_leaf">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                    <option value="20">20</option>
+
+                                </select>
+                            </div>
+                        </form>
+
+                    </div>
+                        
+                    <!-- Possible values for SVR -->
+                    <div id="SVRBlock">
+                        <form action="">
+
+                            <div>
+                                
+                            </div>
+                            
+                        </form>
+
+                    </div>
+
+                    <!-- Possible values for Decision Tree -->
+
+                </div>
+
+
+
+
+
+            </div>
+
+        </body>
+
+
+</html>
