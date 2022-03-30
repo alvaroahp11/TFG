@@ -18,9 +18,9 @@
     <h2>Stock Price Prediction</h2>
     <!-- Options for stock price prediction -->
     <form>
-        <div>
+        <div class="textAlignCenter">
             <label for="stock">Choose a Stock</label>
-            <select name="stock" id="stocks">
+            <select name="stock" id="stocks" class="form-control">
 
                 <option value="TSLA">TSLA</option>
                 <option value="SPY">SPY</option>
@@ -28,178 +28,161 @@
                 <option value="NIO">NIO</option>
 
             </select>
+
+        </div>
+        <div class="containerAlgorithm">
+            <div>
+                <div class="algorithm">
+                    <input type="radio" value="RandomForestRegressor" name="algorithm" checked class="form-check">
+                    <label for="RandomForestRegressor">Random Forest</label>
+                </div>
+                <div class="algorithm">
+                    <input type="radio" value="SVR" name="algorithm" class="form-check">
+                    <label for="SVR">SVR</label>
+                </div>
+                <div class="algorithm">
+                    <input type="radio" value="DecisionTreeRegressor" name="algorithm" class="form-check">
+                    <label for="DecisionTreeRegressor">Decision Tree</label>
+                </div>
+            </div>
+            <div id="RandomForestBlock">
+                <!-- Number of estimators in the forest -->
+                <div>
+                    <label for="n_estimators">The number of trees in the forest</label>
+                    <select name="n_estimators" id="n_estimators" class="form-control">
+                        <option value="50">50</option>
+                        <option value="100" selected="selected">100</option>
+                        <option value="200">200</option>
+                        <option value="500">500</option>
+                    </select>
+                </div>
+
+                <!-- Criterion -->
+                <div>
+                    <label for="criterion">The function to measure the quality of a split</label>
+                    <select name="criterion" id="criterion" class="form-control">
+                        <option value="squared_error">Squared Error</option>
+                        <option value="absolute_error">Absolute Error</option>
+                        <option value="poisson">Poisson</option>
+                    </select>
+                </div>
+
+                <!-- Max depth -->
+
+                <div>
+                    <label for="max_depth">The maximum depth of the tree</label>
+                    <select name="max_depth" id="max_depth" class="form-control">
+                        <option value="None">None</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+
+                <!-- Min Sample Split -->
+                <div>
+                    <label for="min_samples_split">The minimum number of samples required to split an internal node</label>
+                    <select name="min_samples_split" id="min_samples_split" class="form-control">
+                        <option value="2" selected="selected">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+
+                <!-- Min Sample Leaf -->
+                <div>
+                    <label for="min_samples_leaf">The minimum number of samples required to be at a leaf node</label>
+                    <select name="min_samples_leaf" id="min_samples_leaf" class="form-control">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+
+                    </select>
+                </div>
+            </div>
+            <div id="SVRBlock">
+
+                <div>
+                    <label for="kernel">Specifies the kernel type to be used in the algorithm</label>
+                    <select name="kernel" id="kernel" class="form-control">
+                        <option value="linear">Linear</option>
+                        <option value="poly">Poly</option>
+                        <option value="rbf" selected="selected">Rbf</option>
+                        <option value="sigmoid">Sigmoid</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="degree">Degree of the polynomial kernel function only works for poly</label>
+                    <select name="degree" id="degree" class="form-control">
+                        <option value="3" selected="selected">3</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="gamma">Kernel coefficient for rbf, poly and sigmoid</label>
+                    <select name="gamma" id="gamma" class="form-control">
+                        <option value="scale" selected="selected">Scale</option>
+                        <option value="auto">Auto</option>
+                    </select>
+                </div>
+
+            </div>
+            <div id="DecissionTreeBlock">
+                <!-- Criterion -->
+                <div>
+                    <label for="criterion">The function to measure the quality of a split</label>
+                    <select name="criterion" id="criterion" class="form-control">
+                        <option value="squared_error" selected="selected">Squared Error</option>
+                        <option value="riedman_mse">Riedman Mse</option>
+                        <option value="absolute_error">Absolute Error</option>
+                        <option value="poisson">Poisson</option>
+                    </select>
+                </div>
+                <!-- Splitter -->
+                <div>
+                    <label for="splitter">The strategy used to choose the split at each node</label>
+                    <select name="splitter" id="splitter" class="form-control">
+                        <option value="best" selected="selected">Best</option>
+                        <option value="random">Random</option>
+                    </select>
+                </div>
+                <!-- Max Depth -->
+                <div>
+                    <label for="max_depth">The maximum depth of the tree</label>
+                    <select name="max_depth" id="max_depth" class="form-control">
+                        <option value="None" selected="selected">None</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                    </select>
+                </div>
+                <!-- Min Sample Split -->
+                <div>
+                    <label for="min_samples_split">The minimum number of samples required to split an internal node</label>
+                    <select name="min_samples_split" id="min_samples_split" class="form-control">
+                        <option value="2" selected="selected">2</option>
+                        <option value="5">5</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                    </select>
+                </div>
+
+            </div>
+        </div>
+        <div class="textAlignCenter" >
             <input type="submit" value="Submit">
         </div>
-        <div>
-            <div class="algorithm">
-                <input type="radio" value="RandomForestRegressor" name="algorithm" checked>
-                <label for="RandomForestRegressor">Random Forest</label>
-            </div>
-            <div class="algorithm">
-                <input type="radio" value="SVR" name="algorithm">
-                <label for="SVR">SVR</label>
-            </div>
-            <div class="algorithm">
-                <input type="radio" value="DecisionTreeRegressor" name="algorithm">
-                <label for="DecisionTreeRegressor">Decision Tree</label>
-            </div>
-        </div>
-        <div>
-            <!-- Number of estimators in the forest -->
-            <div>
-                <label for="n_estimators">The number of trees in the forest</label>
-                <select name="n_estimators" id="n_estimators">
-                    <option value="50">50</option>
-                    <option value="100" selected="selected">100</option>
-                    <option value="200">200</option>
-                    <option value="500">500</option>
-                </select>
-            </div>
 
-            <!-- Criterion -->
-            <div>
-                <label for="criterion">The function to measure the quality of a split</label>
-                <select name="criterion" id="criterion">
-                    <option value="squared_error">Squared Error</option>
-                    <option value="absolute_error">Absolute Error</option>
-                    <option value="poisson">Poisson</option>
-                </select>
-            </div>
-
-            <!-- Max depth -->
-
-            <div>
-                <label for="max_depth">The maximum depth of the tree</label>
-                <select name="max_depth" id="max_depth">
-                    <option value="None">None</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-            </div>
-
-            <!-- Min Sample Split -->
-            <div>
-                <label for="min_samples_split">The minimum number of samples required to split an internal node</label>
-                <select name="min_samples_split" id="min_samples_split">
-                    <option value="2" selected="selected">2</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
-
-            <!-- Min Sample Leaf -->
-            <div>
-                <label for="min_samples_leaf">The minimum number of samples required to be at a leaf node</label>
-                <select name="min_samples_leaf" id="min_samples_leaf">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-
-                </select>
-            </div>
-        </div>
-        <div>
-
-            <div>
-                <label for="kernel">Specifies the kernel type to be used in the algorithm</label>
-                <select name="kernel" id="kernel">
-                    <option value="linear">Linear</option>
-                    <option value="poly">Poly</option>
-                    <option value="rbf" selected="selected">Rbf</option>
-                    <option value="sigmoid">Sigmoid</option>
-                </select>
-            </div>
-            <div>
-                <label for="degree">Degree of the polynomial kernel function only works for poly</label>
-                <select name="degree" id="degree">
-                    <option value="3" selected="selected">3</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-            </div>
-
-            <div>
-                <label for="gamma">Kernel coefficient for rbf, poly and sigmoid</label>
-                <select name="gamma" id="gamma">
-                    <option value="scale" selected="selected">Scale</option>
-                    <option value="auto">Auto</option>
-                </select>
-            </div>
-
-        </div>
-        <div>
-            <!-- Criterion -->
-            <div>
-                <label for="criterion">The function to measure the quality of a split</label>
-                <select name="criterion" id="criterion">
-                    <option value="squared_error" selected="selected">Squared Error</option>
-                    <option value="riedman_mse">Riedman Mse</option>
-                    <option value="absolute_error">Absolute Error</option>
-                    <option value="poisson">Poisson</option>
-                </select>
-            </div>
-            <!-- Splitter -->
-            <div>
-                <label for="splitter">The strategy used to choose the split at each node</label>
-                <select name="splitter" id="splitter">
-                    <option value="best" selected="selected">Best</option>
-                    <option value="random">Random</option>
-                </select>
-            </div>
-            <!-- Max Depth -->
-            <div>
-                <label for="max_depth">The maximum depth of the tree</label>
-                <select name="max_depth" id="max_depth">
-                    <option value="None" selected="selected">None</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                    <option value="30">30</option>
-                </select>
-            </div>
-            <!-- Min Sample Split -->
-            <div>
-                <label for="min_samples_split">The minimum number of samples required to split an internal node</label>
-                <select name="min_samples_split" id="min_samples_split">
-                    <option value="2" selected="selected">2</option>
-                    <option value="5">5</option>
-                    <option value="10">10</option>
-                    <option value="20">20</option>
-                </select>
-            </div>
-
-        </div>
     </form>
-    <!-- Options for algorithm -->
-    <div class="containerAlgorithm">
-        <div>
-
-        </div>
-        <!-- Possible values for Random Forest -->
-        <div id="RandomForestBlock" class="algorithmSettings">
-
-
-        </div>
-
-        <!-- Possible values for SVR -->
-        <div id="SVRBlock" class="algorithmSettings">
-
-
-        </div>
-
-        <!-- Possible values for Decision Tree -->
-        <div id="DecissionTreeBlock" class="algorithmSettings">
-
-        </div>
-
-    </div>
 
 </div>
 

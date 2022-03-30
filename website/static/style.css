@@ -5,10 +5,16 @@
     flex-direction: column;
     padding: 0 35%;
     align-items: center;
+
 }
 
 .containerAlgorithm{
     display: flex;
+    align-items: center;
+}
+
+.textAlignCenter{
+    text-align: center;
     align-items: center;
 }
 
