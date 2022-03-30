@@ -1,4 +1,4 @@
-$(document).ready(function(){  
+$(document).ready(function(){
     $('input[type=radio][name=algorithm]').change(function(){
         if(this.value=="RandomForestRegressor"){
             $('#RandomForestBlock').show()
@@ -11,7 +11,7 @@ $(document).ready(function(){
         }else{
             $('#RandomForestBlock').hide()
             $('#SVRBlock').hide()
-            $('#DecissionTreeBlock').show() 
+            $('#DecissionTreeBlock').show()
         }
     });
 });

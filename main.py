@@ -1,8 +1,6 @@
-from GUI.gui import Gui
+from website import create_app
 
-#Main de la aplicación
-if __name__ == "__main__":
-    app = Gui()
-    app.run()
-    app.root.mainloop()
+app = create_app()
 
+if __name__ == '__main__':
+    app.run(debug=True)
