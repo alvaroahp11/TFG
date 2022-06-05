@@ -5,5 +5,6 @@ views = Blueprint('views', __name__)
 
 @views.route('/', methods=['GET', 'POST'])
 def home():
-    # modelgeneration(request.form.to_dict(flat=False))
+    if request.method == "POST":
+        modelgeneration(request.form.to_dict())
     return render_template("base.html")
