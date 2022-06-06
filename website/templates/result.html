@@ -23,12 +23,27 @@
     </div>
     <div class="container">
         <h4>Result</h4>
+<!--        {% for value, key in resultado.items()%}-->
+<!--            <h1> {{value}}</h1>-->
+<!--            <h1> {{key}}</h1>-->
+<!--        {% endfor %}-->
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
+    <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
+    <script class="col-12">
+        var result = JSON.parse('{{resultado | tojson}}')
+        const chart = LightweightCharts.createChart(document.body, { width: 400, height: 300 });
+        const lineSeries = chart.addLineSeries();
+        lineSeries.setData([]);
+        jQuery.each(result, function (i, val){
+            lineSeries.update({
+                time: i, value: val
+            })
+        });
+    </script>
   </body>
 </html>

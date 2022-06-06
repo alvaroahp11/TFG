@@ -1,3 +1,5 @@
+import datetime
+
 import yfinance as yf
 import talib as tb
 import pandas as pd
@@ -45,24 +47,29 @@ def parseData(data: dict, algoritmo):
         data["min_samples_split"][0] = int(data["min_samples_split"][0])
         data["min_samples_leaf"][0] = int(data["min_samples_leaf"][0])
 
+def technicalIndicators(df):
+    dfCopy = df.copy()
+    dfCopy["EMA200"] = tb.EMA(dfCopy["Close"], timeperiod=200)
+    dfCopy["EMA50"] = tb.EMA(dfCopy["Close"], timeperiod=50)
+    dfCopy["RSI"] = tb.RSI(dfCopy["Close"], timeperiod=14)
+    dfCopy["UP_BAND"], dfCopy["MID_BAND"], dfCopy["LOW_BAND"] = tb.BBANDS(dfCopy["Close"], timeperiod=20)
+    dfCopy["MA200"] = tb.MA(dfCopy["Close"], timeperiod=200)
+    dfCopy["MA50"] = tb.MA(dfCopy["Close"], timeperiod=50)
+    dfCopy.dropna(inplace=True)
+    return dfCopy
+
 def modelgeneration(data: dict):
     stockTicker = data["stock"]
     #Getting data
     df_data = yf.download(tickers=stockTicker, period="max", interval="1D")
     df_data.reset_index(inplace=True)
 
-    df_data = df_data[["Date", "Close"]]
+    crudeData = df_data[["Date", "Close"]]
 
-    df_data = df_data.rename(columns={"Date": "Date", "Close": "Close"})
+    df_data = crudeData.rename(columns={"Date": "Date", "Close": "Close"})
 
     #Technical indicators
-    df_data["EMA200"] = tb.EMA(df_data["Close"], timeperiod=200)
-    df_data["EMA50"] = tb.EMA(df_data["Close"], timeperiod=50)
-    df_data["RSI"] = tb.RSI(df_data["Close"], timeperiod=14)
-    df_data["UP_BAND"], df_data["MID_BAND"], df_data["LOW_BAND"] = tb.BBANDS(df_data["Close"], timeperiod=20)
-    df_data["MA200"] = tb.MA(df_data["Close"], timeperiod=200)
-    df_data["MA50"] = tb.MA(df_data["Close"], timeperiod=50)
-    df_data.dropna(inplace=True)
+    df_data = technicalIndicators(df_data)
 
     #Lagg the dataframe
     df_copy = df_data.copy()
@@ -74,7 +81,7 @@ def modelgeneration(data: dict):
          "Date-3", "Date-4", "Date-5"], axis=1)
 
     #Data for training
-    X_train = df_lagged.iloc[:, 1:-1]
+    X_train = df_lagged.iloc[:, 1:]
     y_train = df_lagged.iloc[:, 0:1]
     algoritmo = data["algorithm"][0]
     del data["stock"]
@@ -94,6 +101,7 @@ def modelgeneration(data: dict):
             algoritmo: (DecisionTreeRegressor, data)
         }
     clfFinal = ""
+
     for clf_name, clf_info in classifiers.items():
         Clf, hyperparams = clf_info
         hp_ks, hp_vs = hyperparams.keys(), hyperparams.values()
@@ -101,7 +109,24 @@ def modelgeneration(data: dict):
         for config in configs:
             clfFinal = train(Clf, config, clf_name, X_train, y_train)
 
-    print(clfFinal)
+    finalPrediction = {}
+    for i in range(10):
+        #lagg the dataframe
+        df_data = technicalIndicators(crudeData)
+        df_copy = df_data.copy()
+        WINDOW_SIZE = 4
+        df_lagged = laggDataframe(df_copy, WINDOW_SIZE, df_data)
+        df_lagged = df_lagged.drop(["Date", "Date-1", "Date-2", "Date-3", "Date-4"], axis=1)
+        df_lagged = df_lagged.iloc[-1].array
+        df_lagged = df_lagged.reshape(1, -1)
+        prediction = clfFinal.predict(df_lagged)
+        dayPlusOne = crudeData.iloc[-1]["Date"] + pd.DateOffset(1)
+        finalPrediction[str(dayPlusOne.date())] = prediction[0]
+        crudeData.loc[len(crudeData.index)] = [dayPlusOne, prediction[0]]
+        print(crudeData)
+
+    return finalPrediction
+
 
 
 
