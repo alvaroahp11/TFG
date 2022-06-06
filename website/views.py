@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+from flask import Blueprint, render_template, request, url_for, redirect
 from .modelgenerator import modelgeneration
 views = Blueprint('views', __name__)
 
@@ -7,4 +7,10 @@ views = Blueprint('views', __name__)
 def home():
     if request.method == "POST":
         modelgeneration(request.form.to_dict(flat=False))
+        return redirect(url_for('views.result'))
     return render_template("base.html")
+
+@views.route('/result')
+def result():
+
+    return render_template("result.html")

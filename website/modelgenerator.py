@@ -23,8 +23,29 @@ def train(Clf,config, clf_name, X_train, y_train):
     clf.fit(X_train, y_train)
     return clf
 
-def modelgeneration(data: dict):
+def parseData(data: dict, algoritmo):
+    if algoritmo == "RandomForestRegressor":
+        data["n_estimators"][0] = int(data["n_estimators"][0])
+        if data["max_depth"][0] == "None":
+            data["max_depth"][0] = None
+        else:
+            data["max_depth"][0] = int(data["max_depth"][0])
 
+        data["min_samples_split"][0] = int(data["min_samples_split"][0])
+        data["min_samples_leaf"][0] = int(data["min_samples_leaf"][0])
+
+    elif algoritmo == "SVR":
+        data['degree'][0] = int(data['degree'][0])
+
+    elif algoritmo == "DecisionTreeRegressor":
+        if data["max_depth"][0] == "None":
+            data["max_depth"][0] = None
+        else:
+            data["max_depth"][0] = int(data["max_depth"][0])
+        data["min_samples_split"][0] = int(data["min_samples_split"][0])
+        data["min_samples_leaf"][0] = int(data["min_samples_leaf"][0])
+
+def modelgeneration(data: dict):
     stockTicker = data["stock"]
     #Getting data
     df_data = yf.download(tickers=stockTicker, period="max", interval="1D")
@@ -58,7 +79,7 @@ def modelgeneration(data: dict):
     algoritmo = data["algorithm"][0]
     del data["stock"]
     del data["algorithm"]
-    print(data)
+    parseData(data, algoritmo)
     classifiers = ""
     if algoritmo == "RandomForestRegressor":
         classifiers = {
@@ -77,11 +98,12 @@ def modelgeneration(data: dict):
         Clf, hyperparams = clf_info
         hp_ks, hp_vs = hyperparams.keys(), hyperparams.values()
         configs = [dict(zip(hp_ks, v)) for v in itertools.product(*hp_vs)]
-        print(config)
         for config in configs:
             clfFinal = train(Clf, config, clf_name, X_train, y_train)
 
     print(clfFinal)
+
+
 
 
 

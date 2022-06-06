@@ -66,7 +66,7 @@
             <!-- Min sample split -->
             <label for="min_samples_split" class="form-label">The minimum number of samples required to split an internal node</label>
             <select name="min_samples_split" class="form-control">
-                <option value="None">None</option>
+                <option value="2">2</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -75,7 +75,8 @@
              <!-- Min sample leaf -->
             <label for="min_samples_leaf" class="form-label">The minimum number of samples required to be at a leaf node</label>
             <select name="min_samples_leaf" class="form-control">
-                <option value="None">None</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="20">20</option>
@@ -111,9 +112,11 @@
             <!-- Degree -->
             <label for="degree" class="form-label">Degree of the polynomial kernel function only works for poly</label>
             <select name="degree" class="form-control">
-                <option value="squared_error">Squared Error</option>
-                <option value="absolute_error">Absolute Error</option>
-                <option value="poisson">Poisson</option>
+                <option value="3" selected="selected">3</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
             </select>
             <!-- Gamma -->
             <label for="gamma" class="form-label">Kernel coefficient for rbf, poly and sigmoid</label>
@@ -167,7 +170,18 @@
             <!-- Min sample split -->
             <label for="min_samples_split" class="form-label">The minimum number of samples required to split an internal node</label>
             <select name="min_samples_split" class="form-control">
-                <option value="None">None</option>
+                <option value="2">2</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+
+            <!-- Min sample leaf -->
+            <label for="min_samples_leaf" class="form-label">The minimum number of samples required to be at a leaf node</label>
+            <select name="min_samples_leaf" class="form-control">
+                <option value="1">1</option>
+                <option value="2">2</option>
                 <option value="5">5</option>
                 <option value="10">10</option>
                 <option value="20">20</option>
