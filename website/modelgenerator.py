@@ -110,7 +110,7 @@ def modelgeneration(data: dict):
             clfFinal = train(Clf, config, clf_name, X_train, y_train)
 
     finalPrediction = {}
-    for i in range(10):
+    for i in range(20):
         #lagg the dataframe
         df_data = technicalIndicators(crudeData)
         df_copy = df_data.copy()
@@ -123,7 +123,6 @@ def modelgeneration(data: dict):
         dayPlusOne = crudeData.iloc[-1]["Date"] + pd.DateOffset(1)
         finalPrediction[str(dayPlusOne.date())] = prediction[0]
         crudeData.loc[len(crudeData.index)] = [dayPlusOne, prediction[0]]
-        print(crudeData)
 
     return finalPrediction
 
