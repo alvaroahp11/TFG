@@ -31,7 +31,7 @@
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <script>
         var result = JSON.parse('{{resultado | tojson}}');
-
+        var oldData = JSON. parse('{{oldData | tojson}}')
         var graph = document.createElement("div");
         graph.className = "container";
 
@@ -39,12 +39,27 @@
         document.body.appendChild(graph)
 
 
-        const lineSeries = chart.addAreaSeries();
+        const lineSeries = chart.addAreaSeries({
+            title:"Predicción"
+        });
+        const old = chart.addAreaSeries({
+            topColor: 'rgba(67, 83, 254, 0.7)',
+            bottomColor: 'rgba(67, 83, 254, 0.3)',
+            lineColor: 'rgba(67, 83, 254, 1)',
+            title: "Precio Pasado",
+        })
         lineSeries.setData([]);
         jQuery.each(result, function (i, val){
             lineSeries.update({
                 time: i, value: val
             })
+        });
+
+        jQuery.each(oldData, function(i, val){
+           old.update({
+               time: i, value: val
+
+           })
         });
     </script>
   </body>

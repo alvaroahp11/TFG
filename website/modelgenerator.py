@@ -10,6 +10,8 @@ from sklearn.svm import SVR
 from sklearn.tree import DecisionTreeRegressor
 import itertools
 
+
+
 #Function that laggs dataframe
 def laggDataframe(dataframeCopy, windowSize, originalDataframe):
   for window in range(1, windowSize+1):
@@ -109,6 +111,12 @@ def modelgeneration(data: dict):
         for config in configs:
             clfFinal = train(Clf, config, clf_name, X_train, y_train)
 
+
+    oldData = crudeData.tail(20)
+    dictOldData = {}
+    for index, row in oldData.iterrows():
+        dictOldData[str(row['Date'].date())] = row['Close']
+
     finalPrediction = {}
     for i in range(20):
         #lagg the dataframe
@@ -123,8 +131,13 @@ def modelgeneration(data: dict):
         dayPlusOne = crudeData.iloc[-1]["Date"] + pd.DateOffset(1)
         finalPrediction[str(dayPlusOne.date())] = prediction[0]
         crudeData.loc[len(crudeData.index)] = [dayPlusOne, prediction[0]]
+        if i == 0:
+            dictOldData[str(dayPlusOne.date())] = prediction[0]
 
-    return finalPrediction
+    return finalPrediction, dictOldData
+
+
+
 
 
 
