@@ -1,0 +1,73 @@
+,classifier,hyperparameters,errror
+0,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",3.022707582797173
+1,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.297793034601633
+2,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",4.249449668654531
+3,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.0474168676323137
+4,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",2.74806230749132
+5,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.0634383382876775
+6,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",2.9659682503806524
+7,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.6762146627771806
+8,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",2.72988780224018
+9,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.4648610996341644
+10,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.6195268273284302
+11,Perceptrón,"{'hidden_layer_sizes': 100, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.245241690146554
+12,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",3.0977149252328533
+13,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.7430098018171782
+14,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",2.5687570086551252
+15,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.829199149291571
+16,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.373269018936839
+17,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.8231617218631992
+18,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",3.46566500167694
+19,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.938200608307987
+20,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",3.416836623988538
+21,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.3617170848439373
+22,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.5658719338245572
+23,Perceptrón,"{'hidden_layer_sizes': 200, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.0034125588790084
+24,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",2.5040100037166866
+25,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.2316060003651823
+26,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",5.38351248973703
+27,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.3613745244660995
+28,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.1214626400567758
+29,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.672635773153633
+30,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",2.470204618489376
+31,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.3324545736333433
+32,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",3.045232095636604
+33,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.142026877498291
+34,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.1265234351974893
+35,Perceptrón,"{'hidden_layer_sizes': (500, 200), 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.6374992283552046
+36,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",29.504315492875914
+37,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",18.26136896377416
+38,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",9.325233316354451
+39,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",6.2238449741725725
+40,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",4.056050387774583
+41,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",13.288848267457123
+42,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",28.979067784146718
+43,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",18.801944429835906
+44,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",15.268216251103077
+45,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",15.136465898139669
+46,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",8.26405090859151
+47,Perceptrón,"{'hidden_layer_sizes': 3, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",8.21278191164161
+48,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",6.084254469103688
+49,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",9.538172763264459
+50,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",7.757386489564369
+51,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.299085349901934
+52,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",6.52886329470838
+53,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.8523576495961827
+54,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",12.468032668796308
+55,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",6.774949869501189
+56,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",7.192689375222238
+57,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",4.193867700297129
+58,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",5.642466602047947
+59,Perceptrón,"{'hidden_layer_sizes': 10, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",5.484880008796007
+60,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",2.5281102407273477
+61,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.5433720420939245
+62,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",2.515975091021863
+63,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.6483520309894115
+64,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",3.0191514823127696
+65,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'relu', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",2.7901228630419825
+66,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'constant', 'max_iter': 2000}",3.1947446566997884
+67,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.001, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.024010013938583
+68,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'constant', 'max_iter': 2000}",3.4737825345344637
+69,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.004, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.142515949862216
+70,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'constant', 'max_iter': 2000}",2.889336050638618
+71,Perceptrón,"{'hidden_layer_sizes': 700, 'activation': 'tanh', 'learning_rate_init': 0.005, 'learning_rate': 'adaptive', 'max_iter': 2000}",3.1572173547166407
